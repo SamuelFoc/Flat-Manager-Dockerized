@@ -1,0 +1,38 @@
+.energiesMainSection {
+}
+
+.energiesMainContainer {
+  width: 100vw;
+  max-height: 65vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  color: var(--text-color);
+  background-color: var(--glass-bcg-color);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  box-shadow: var(--glass-box-shadow);
+}
+
+.energiesMainTitle {
+  background: var(--invisible-color);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  font-size: var(--text-title);
+  font-weight: lighter;
+  color: var(--text-color);
+  border-radius: 3px;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.energiesSubTitle {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1068px) {
+  .energiesMainContainer {
+    justify-content: start;
+  }
+}

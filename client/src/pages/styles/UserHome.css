@@ -1,0 +1,48 @@
+.userHomeMainSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  overflow: auto;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(7px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.178);
+}
+
+@media only screen and (max-width: 1568px) {
+  .userHomeMainSection {
+    justify-content: flex-start;
+  }
+}
+
+.userHomeItem {
+  background: var(--white-card-bcg);
+  border: var(--white-card-border);
+  min-width: 10rem;
+  height: 10rem;
+  border-radius: var(--card-radius);
+  position: relative;
+  color: var(--card-fs-regular-color);
+  transition: 0.4s;
+}
+.userHomeItem:hover {
+  transform: scale(1.03, 1.03);
+  box-shadow: var(--card-shadow);
+  border-bottom: 5px solid var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transform: rotate3d(-1, 1, 0, 25deg);
+}
+
+.userHomeItemIcon {
+  color: var(--text-color);
+}
+
+.userHomeSubTitle {
+  color: var(--text-color);
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1rem;
+  font-size: var(--text-regular);
+}

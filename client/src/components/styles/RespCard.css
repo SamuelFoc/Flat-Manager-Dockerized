@@ -1,0 +1,78 @@
+.respCard {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.381);
+  border-radius: var(--card-radius);
+  padding: 10px;
+  margin-left: var(--left-margin);
+}
+
+.respCardTitle {
+  font-size: var(--card-fs-title);
+  color: var(--card-fs-title-color);
+}
+
+.respCardText {
+  font-size: var(--card-fs-regular);
+  color: var(--card-fs-regular-color);
+}
+
+.respCardHiglight {
+  font-size: var(--card-fs-subicon);
+}
+
+.respCardSubIcon {
+  font-size: var(--card-fs-subicon);
+}
+
+.criticalResp {
+  font-weight: bold;
+  color: rgb(219, 84, 84);
+}
+.highResp {
+  font-weight: bold;
+  color: rgb(255, 166, 0);
+}
+.lowResp {
+  font-weight: bold;
+  color: rgb(0, 162, 255);
+}
+
+.respDoneIcon-cross {
+  font-size: 1.2rem;
+  color: rgb(219, 84, 84);
+}
+
+.respDoneIcon-check {
+  font-size: 1.2rem;
+  color: rgb(38, 194, 7);
+}
+
+@media only screen and (max-width: 480px) {
+  .respCard {
+    max-width: 80vw;
+  }
+  .respCardHiglight {
+    font-size: 5px;
+  }
+  .respCardTitle > h6 {
+    font-size: 14px;
+  }
+  .respCardText {
+    font-size: 12px;
+  }
+  .respCardBtns > button {
+    font-size: 5px;
+    padding: 0 8px;
+    height: 30px;
+    margin: 0;
+  }
+  .criticalResp {
+    font-size: 12px;
+  }
+  .highResp {
+    font-size: 12px;
+  }
+  .lowResp {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,84 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--nav-bcg-color);
+  backdrop-filter: blur(3px);
+  box-shadow: var(--nav-shadow);
+  max-height: 70px;
+}
+
+aside ul {
+  background-color: var(--sidenav-bcg-color);
+  backdrop-filter: var(--glass-bcg-blur);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 150px;
+  right: -5px;
+  padding: 0;
+  border-radius: var(--sidenav-radius);
+}
+
+@media only screen and (max-width: 1000px) {
+  nav ul {
+    visibility: hidden;
+  }
+
+  aside ul {
+    visibility: visible;
+    z-index: 1;
+    font-size: 12px;
+  }
+  .nav-item {
+    padding: 0px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  aside ul {
+    visibility: hidden;
+    margin: 0;
+  }
+}
+
+.navbarTitle {
+  font-size: var(--nav-fs-title);
+  min-width: 220px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--nav-f-family);
+  transition: 0.6s;
+}
+.navbarTitle:hover {
+  color: rgb(255, 255, 255);
+}
+.nav-item {
+  transition: 0.2s;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.651);
+  font-size: 18px;
+}
+.nav-item:hover {
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+  font-size: 19px;
+}
+.ring:hover {
+  animation-name: ring;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes ring {
+  25% {
+    transform: rotateZ(25deg);
+  }
+  75% {
+    transform: rotateZ(-25deg);
+  }
+}

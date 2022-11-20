@@ -1,0 +1,47 @@
+.room {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 36, 35, 0.608);
+  border: 1px solid rgba(146, 130, 130, 0.262);
+  border-radius: var(--card-radius);
+  transition: 0.3s;
+  color: var(--card-icon-color);
+  box-shadow: var(--card-shadow);
+  user-select: none;
+}
+.room > * {
+  color: var(--card-title-color);
+}
+.room:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+  background-color: rgba(92, 92, 92, 0.461);
+}
+
+.openedRoom {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(146, 144, 144, 0.451);
+  background-color: rgba(0, 0, 0, 0.547);
+}
+.qrcodeImg {
+  background-color: rgba(255, 255, 255, 0.863);
+  margin: 25px 0;
+}
+.alreadyPaid {
+  padding: 10px 20px;
+  margin: 20px 0px;
+  font-weight: 600;
+  color: rgb(4, 182, 4);
+  background-color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 480px) {
+  .openedRoom {
+    font-size: 13px;
+  }
+}

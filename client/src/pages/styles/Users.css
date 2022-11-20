@@ -1,0 +1,33 @@
+.usersMainContainer {
+  width: 100vw;
+  max-height: 65vh;
+  min-height: 20vh;
+  padding: 1rem 2rem;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  overflow-y: auto;
+
+  color: var(--text-color);
+  background-color: var(--glass-bcg-color);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  box-shadow: var(--glass-box-shadow);
+}
+@media only screen and (max-width: 768px) {
+  .usersMainContainer {
+    grid-template-columns: auto;
+    padding-right: 2rem;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+  .usersMainContainer {
+    grid-template-columns: auto auto auto;
+    padding-right: 2rem;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1400px) {
+  .usersMainContainer {
+    grid-template-columns: auto auto auto auto;
+  }
+}

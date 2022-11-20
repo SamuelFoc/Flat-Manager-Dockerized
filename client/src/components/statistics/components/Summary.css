@@ -1,0 +1,8 @@
+@media only screen and (max-width: 480px) {
+  .summaryTitle {
+    font-size: 14px;
+  }
+  .summaryText {
+    font-size: 12px;
+  }
+}

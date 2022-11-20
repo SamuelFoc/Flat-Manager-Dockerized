@@ -1,0 +1,17 @@
+@media only screen and (max-width: 480px) {
+  .adminMsgBox {
+    max-width: 70vw;
+  }
+  .adminMessage {
+    font-size: 16px;
+  }
+  .adminBox {
+    padding: 0 4px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .btn {
+    font-size: 10px;
+  }
+}

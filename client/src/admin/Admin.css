@@ -1,0 +1,88 @@
+.adminMainSection {
+  margin-top: 50px;
+  max-height: 80vh;
+  overflow-y: auto;
+  min-width: 100vw;
+}
+
+.formBox {
+  background-color: rgba(0, 0, 0, 0.274);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+h3 {
+  color: white;
+}
+
+.adminMsgBox {
+  background-color: rgba(0, 0, 0, 0.253);
+  margin: 0;
+  border-radius: 5px;
+}
+
+.adminBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border: 2px solid rgba(187, 99, 175, 0.418);
+  background-color: rgba(0, 0, 0, 0.192);
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  border-radius: 5px;
+  width: 85%;
+}
+
+@media only screen and (min-width: 1068px) {
+  .adminBox {
+    width: 60%;
+  }
+  .adminMsgBox {
+    width: 60%;
+  }
+  .adminMainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hidden {
+  position: absolute;
+  visibility: collapse;
+}
+
+.input {
+  max-width: 200px;
+}
+
+.xMark {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  transition: 0.3s;
+  padding: 3px 5px;
+}
+.xMark:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
+.xMark-success {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  transition: 0.3s;
+  padding: 3px 5px;
+}
+.xMark-success:hover {
+  cursor: pointer;
+  background-color: rgb(57, 159, 7);
+  color: white;
+  border-radius: 3px;
+}

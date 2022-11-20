@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+* {
+  /* BACKGROUND -------------------------------------------------- */
+  --triangle-color: rgba(255, 0, 136, 0.916);
+  --background-gradient: linear-gradient(
+    -5deg,
+    rgb(19, 22, 48) 50%,
+    rgb(18, 26, 114) 70%,
+    rgb(78, 117, 233) 100%
+  );
+  /* rgba(27, 29, 46, 1) 50%,
+    rgba(39, 34, 83, 1) 70%,
+    rgba(59, 90, 184, 1) 100% */
+  /* _____________________________________________________________ */
+
+  /* CARDS  ------------------------------------------------------ */
+  --white-card-border: 1px solid rgba(255, 255, 255, 0.155);
+  --white-card-bcg: linear-gradient(
+    323deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(247, 247, 247, 0.128) 45%,
+    rgba(223, 223, 223, 0) 100%
+  );
+  --card-radius: 5px;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.161);
+  --right-margin: 5px;
+  --left-margin: 10px;
+  /* Card Fonts */
+  --card-fs-title: 16px;
+  --card-fs-regular: 14px;
+  /* Card Fonts Colors */
+  --card-fs-title-color: rgba(255, 255, 255, 0.963);
+  --card-fs-regular-color: rgba(255, 255, 255, 0.845);
+  /* Card icons */
+  --card-icon-color: rgba(255, 255, 255, 0.765);
+  --card-subicon-color: rgba(255, 255, 255, 0.706);
+  --card-fs-icon: 2.5rem;
+  --card-fs-subicon: 1rem;
+  /* ______________________________________________________________ */
+
+  /* SCROLLBAR ---------------------------------------------------- */
+  --scrollbar-width: 8px;
+  --scrollbar-radius: 8px;
+  --scrollbar-color: rgba(253, 253, 253, 0.186);
+  --scrollbar-bcg-color: transparent;
+  --scrollbar-hover-color: rgba(237, 237, 237, 0.326);
+  /* _______________________________________________________________ */
+
+  /* NAVIGATION BAR ------------------------------------------------ */
+  --nav-item-border: 5px solid var(--accent-color);
+  --nav-item-radius: 8px;
+  --nav-bcg-color: rgba(158, 158, 158, 0.055);
+  --nav-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+  --nav-fs-title: 28px;
+  --nav-fs-item: 18px;
+  --nav-f-family: "Orbitron", sans-serif;
+  --sidenav-bcg-color: rgba(0, 0, 0, 0.708);
+  --sidenav-radius: 8px;
+  /* _______________________________________________________________ */
+
+  /* COLORS  ------------------------------------------------------- */
+  --dark-color: #13141d;
+  --text-color: #ffffff;
+  --accent-color: #f11f81;
+  --invisible-color: transparent;
+  --edit-color: rgba(225, 157, 12, 0.92);
+  --success-color: rgba(0, 156, 0, 0.848);
+  --delete-color: rgb(243, 64, 64);
+  /* _______________________________________________________________ */
+
+  /* FONTS --------------------------------------------------------- */
+  --text-regular: 14px;
+  --text-title: 35px;
+  --text-subtitle: 17px;
+  /* _______________________________________________________________ */
+
+  /* GLASS  -------------------------------------------------------- */
+  --glass-bcg-color: rgba(255, 255, 255, 0.075);
+  --glass-bcg-blur: 8px;
+  --glass-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.178);
+  /* _______________________________________________________________ */
+
+  /* CHART --------------------------------------------------------- */
+  --chart-bcg-color: rgba(0, 0, 0, 0.106);
+  --chart-border: 2px solid rgba(0, 0, 0, 0.19);
+  --chart-fs-title: 22px;
+  /* _______________________________________________________________ */
+}
+
+/* BACKGROUND */
+body {
+  background: var(--background-gradient);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.triangle {
+  position: absolute;
+  right: 120px;
+  top: 100px;
+  z-index: -1;
+  animation-name: rotation;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.triangle-color {
+  fill: var(--triangle-color);
+}
+
+.blend {
+  position: absolute;
+  width: 100vw;
+  left: 0px;
+  bottom: 0px;
+  z-index: -2;
+}
+/* _______________________________________________________________ */
+
+/* BUTTON */
+.btn-custom-edit {
+  border: 1px solid var(--edit-color);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px 12px;
+  color: var(--edit-color);
+  transition: 0.3s;
+}
+.btn-custom-edit:hover {
+  background-color: var(--edit-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.btn-custom-success {
+  border: 1px solid var(--success-color);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px 12px;
+  color: var(--success-color);
+  transition: 0.3s;
+}
+.btn-custom-success:hover {
+  background-color: var(--success-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.btn-custom-delete {
+  border: 1px solid var(--delete-color);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px 12px;
+  color: var(--delete-color);
+  transition: 0.3s;
+}
+.btn-custom-delete:hover {
+  background-color: var(--delete-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+/* LINKS */
+.active > * {
+  color: var(--text-color);
+}
+.active {
+  border-bottom: var(--nav-item-border);
+  padding: 5px 0px;
+  border-radius: var(--nav-item-radius);
+}
+@media only screen and (max-width: 1000px) {
+  .active {
+    padding: 0;
+    border-bottom: 3px solid var(--accent-color);
+  }
+}
+.link {
+  text-decoration: none;
+  color: #cecbc8;
+}
+
+.link:hover {
+  color: #cecbc8;
+}
+/* _______________________________________________________________ */
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  height: var(--scrollbar-width);
+  width: var(--scrollbar-width);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bcg-color);
+  border-radius: var(--scrollbar-radius);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: var(--scrollbar-radius);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover-color);
+}
+
+@media screen and (max-width: 480px) {
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-bcg-color);
+    border-radius: var(--scrollbar-radius);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+    border-radius: var(--scrollbar-radius);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+/* _______________________________________________________________ */
+
+/* ANIMATIONS */
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+/* _______________________________________________________________ */
+
+/* COLORS */
+.text-orange {
+  color: orange;
+}
+.text-yellow {
+  color: rgb(203, 203, 93);
+}
+.text-neutral {
+  color: rgb(79, 171, 232);
+}
+.text-gray {
+  color: rgb(195, 190, 190);
+}
+.text-red {
+  color: red;
+}
+/* _______________________________________________________________ */

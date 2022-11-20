@@ -1,0 +1,65 @@
+.userCard {
+  background: var(--white-card-bcg);
+  border: var(--white-card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  min-width: 250px;
+  max-width: fit-content;
+  /* animation-name: animateCard;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; */
+}
+
+.userCardText {
+  font-size: var(--card-fs-regular);
+  color: var(--card-fs-regular-color);
+  margin: 0;
+}
+
+.userCardTitle {
+  font-size: var(--card-fs-title);
+  color: var(--card-fs-title-color);
+  margin: 0;
+}
+
+.userCardIcon {
+  font-size: var(--card-fs-icon);
+  color: var(--card-icon-color);
+}
+
+.userCardSubIcon {
+  margin-right: 8px;
+  font-size: var(--card-fs-subicon);
+  color: var(--card-subicon-color);
+}
+
+@keyframes animateCard {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .userCardText {
+    font-size: 12px;
+  }
+  .userCardTitle {
+    font-size: 15px;
+  }
+  .userCard {
+    min-width: 230px;
+  }
+}

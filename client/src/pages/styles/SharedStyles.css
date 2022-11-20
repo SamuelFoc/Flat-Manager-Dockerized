@@ -1,0 +1,108 @@
+/* Buttons */
+.mainButton {
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 16px;
+  transition: 0.3s;
+  margin-left: 1rem;
+}
+.mainButton:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Errors */
+.errmsg {
+  position: relative;
+  background-color: rgb(252, 160, 160);
+  color: rgba(229, 48, 48, 0.801);
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+/* Data & Visibility */
+.offscreen {
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+}
+.noData {
+  background-color: rgba(0, 0, 0, 0.308);
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.151);
+  font-size: 14px;
+}
+
+/* X-Marks */
+.xMark {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  transition: 0.3s;
+  padding: 2px;
+}
+.xMark:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+.xMark-success {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  transition: 0.3s;
+  padding: 3px 5px;
+}
+.xMark-success:hover {
+  cursor: pointer;
+  background-color: rgb(57, 159, 7);
+  color: white;
+  border-radius: 3px;
+}
+
+/* COLORS */
+.critical-priority {
+  color: rgb(247, 73, 73);
+}
+.high-priority {
+  color: orange;
+}
+.low-priority {
+  color: var(--edit-color);
+}
+
+/* Titles */
+.custom-pill-box {
+  background: var(--invisible-color);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  font-size: var(--text-title);
+  font-weight: lighter;
+  color: var(--text-color);
+  border-radius: 3px;
+  max-width: 400px;
+  padding: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .custom-pill-box {
+    font-size: 18px;
+  }
+  .mainButton {
+    background-color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.768);
+    color: rgba(255, 255, 255, 0.79);
+    font-size: 12px;
+    transition: 0.3s;
+    margin-left: 1rem;
+  }
+}

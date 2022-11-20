@@ -1,0 +1,25 @@
+.energyCard {
+  background: var(--white-card-bcg);
+  border: var(--white-card-border);
+  border-radius: 10px;
+  padding: 10px;
+}
+.energyCardText {
+  font-size: var(--card-fs-regular);
+  color: var(--card-fs-regular-color);
+}
+.energyCardSubIcon {
+  font-size: var(--card-fs-subicon);
+  color: var(--card-fs-regular-color);
+}
+.energyCard:hover {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 480px) {
+  .energyCard {
+    max-width: 70vw;
+  }
+}

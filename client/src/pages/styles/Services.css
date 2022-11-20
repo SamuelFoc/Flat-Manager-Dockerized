@@ -1,0 +1,91 @@
+.servicesMainSection {
+  width: 100vw;
+  max-height: 78vh;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  overflow-y: auto;
+}
+
+.servicesMainContainer {
+  max-height: 75vh;
+  padding-top: 1rem;
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  color: var(--text-color);
+  background-color: var(--glass-bcg-color);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+  box-shadow: var(--glass-box-shadow);
+  border-radius: 5px;
+}
+
+.servicesSubContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+@media only screen and (max-width: 600px) {
+  .servicesSubContainer {
+    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .servicesMainSection {
+    grid-template-columns: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .servicesSubContainer {
+    grid-template-columns: auto auto;
+  }
+  .servicesMainSection {
+    grid-template-columns: auto;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+  .servicesSubContainer {
+    grid-template-columns: auto auto auto;
+  }
+  .servicesMainSection {
+    grid-template-columns: auto;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1400px) {
+  .servicesSubContainer {
+    grid-template-columns: auto auto auto auto;
+  }
+  .servicesMainSection {
+    grid-template-columns: auto;
+  }
+}
+
+.pieChartBox {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pieChart {
+  width: 100%;
+  max-width: 350px;
+  margin: 10px;
+  margin-bottom: 40px;
+}
+
+.barChartBox {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.barChart {
+  width: 100%;
+  max-width: 550px;
+  margin: 10px;
+  margin-bottom: 40px;
+}

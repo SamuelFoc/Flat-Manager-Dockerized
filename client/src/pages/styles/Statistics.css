@@ -1,0 +1,127 @@
+.statisticsMainSection {
+  position: absolute;
+  left: 0;
+  top: 13%;
+  width: 100vw;
+  overflow-y: scroll;
+  max-height: 83vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statisticsPageBox {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  background-color: var(--glass-bcg-color);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+}
+
+.chartContainer {
+  display: flex;
+  max-width: 85vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+@media only screen and (max-width: 1068px) {
+  .chartContainer {
+    width: 90vw;
+  }
+  .statisticsPageBox {
+    grid-template-columns: auto;
+    width: 90vw;
+    padding: 10px;
+  }
+  .avgCons {
+    min-width: 100%;
+  }
+  .avgExps {
+    min-width: 100%;
+  }
+  .predictions {
+    min-width: 100%;
+  }
+}
+
+.chartBox {
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--chart-bcg-color);
+  border: var(--chart-border);
+  backdrop-filter: blur(var(--chart-bcg-blur));
+}
+
+.reportsMainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px;
+  margin-bottom: 100px;
+  background-color: var(--glass-bcg-color);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+}
+
+.summaryMainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--glass-bcg-color);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(var(--glass-bcg-blur));
+}
+.summarySubContainer {
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--chart-bcg-color);
+  border: var(--chart-border);
+  backdrop-filter: blur(var(--chart-bcg-blur));
+}
+.summary {
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+}
+.summaryMainButton {
+  height: 60px;
+  width: 200px;
+  margin: 50px;
+}
+.summaryCloseButton {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.summaryCloseButton:hover {
+  background-color: red;
+  cursor: pointer;
+}
+.summaryTitle {
+  font-size: var(--text-subtitle);
+}
+
+.chartTitle {
+  font-size: var(--chart-fs-title);
+  font-weight: lighter;
+  padding-left: 20px;
+}
+
+.avgCons {
+  max-width: 40vw;
+}
+.avgExps {
+  max-width: 40vw;
+}
+.predictions {
+  max-width: 40vw;
+}

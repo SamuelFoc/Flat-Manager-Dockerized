@@ -1,0 +1,8 @@
+.adminServiceCard {
+  background-color: rgba(252, 252, 252, 0.055);
+  border-radius: 10px;
+  padding: 10px;
+}
+.adminServiceCard:hover {
+  background-color: rgba(255, 255, 255, 0.397);
+}
