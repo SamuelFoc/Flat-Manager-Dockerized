@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 3200
 
-RUN npm run createAdmin
+# RUN npm run createAdmin
 
 CMD ["npm", "start"]
