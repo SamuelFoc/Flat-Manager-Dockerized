@@ -2,10 +2,11 @@
 
 const allowedOrigins = [
   "https://www.aha-cloud.com",
+  "http://www.aha-cloud.com",
   "http://localhost",
   "http://localhost:3000",
-  "192.168.0.2",
-  "192.168.0.2:3000",
+  "http://192.168.0.2",
+  "http://192.168.0.2:3000",
 ];
 
 module.exports = allowedOrigins;
