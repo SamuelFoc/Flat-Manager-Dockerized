@@ -44,13 +44,58 @@ const Room = (props) => {
               <span>{room?.livings}</span>
             </div>
             <div>
-              <strong>Monthly costs:&ensp;</strong>
+              <strong>Services:&ensp;</strong>
               {room?.units?.map((unit, i) => (
                 <div key={i} className="ms-4">
                   <strong>{unit.name}:&ensp;</strong>
                   <span>{unit.price}&ensp;CZK</span>
                 </div>
               ))}
+              <hr className="m-0 mx-3" />
+              <div className="ms-4 mb-2">
+                <strong>Sum:&ensp;</strong>
+                <span>{room?.units_total}&ensp;CZK</span>
+              </div>
+            </div>
+            <div>
+              <strong>Services paid by me:&ensp;</strong>
+              {room?.my_units?.map((unit, i) => (
+                <div key={i} className="ms-4">
+                  <strong>{unit.name}:&ensp;</strong>
+                  <span>{unit.price}&ensp;CZK</span>
+                </div>
+              ))}
+              <hr className="m-0 mx-3" />
+              <div className="ms-4 mb-2">
+                <strong>Sum:&ensp;</strong>
+                <span>{room?.units_paid_by_me}&ensp;CZK</span>
+              </div>
+            </div>
+            <div className="mb-2">
+              <strong>To pay:&ensp;</strong>
+              <div className="ms-4">
+                <strong>{room?.units_total}</strong>
+                <br />
+                <strong>-{room?.units_paid_by_me}</strong>
+                <br />
+                <hr className="m-0 me-5" />
+                <span>{room?.arrears}&ensp;CZK</span>
+              </div>
+            </div>
+            <div className="mb-2">
+              <strong>Rent:&ensp;</strong>
+              <span>{room?.rent}&ensp;CZK</span>
+            </div>
+            <div className="mb-2">
+              <strong>Pay together:&ensp;</strong>
+              <div className="ms-4">
+                <strong>{room?.rent}</strong>
+                <br />
+                <strong>{room?.arrears}</strong>
+                <br />
+                <hr className="m-0 me-5" />
+                <span>{room?.cost}&ensp;CZK</span>
+              </div>
             </div>
             <div>
               <strong>Last paid:&ensp;</strong>
@@ -58,10 +103,7 @@ const Room = (props) => {
                 {new Date(room?.paid_on)?.toLocaleDateString("cs-CZ")}
               </span>
             </div>
-            <div>
-              <strong>Rent:&ensp;</strong>
-              <span>{room?.cost}&ensp;CZK</span>
-            </div>
+
             <div className="d-flex justify-content-center">
               {dateDiff > 25 || showQR ? (
                 <img className="qrcodeImg" src={src} alt="qr-code" />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import ServiceCard from "./AdminServiceCard";
 import HiddenForm from "../../components/HiddenForm";
@@ -8,6 +8,7 @@ const Services = (props) => {
   const [showBox, setShowBox] = useState(false);
   const axiosPrivate = useAxiosPrivate();
   const [id, setId] = useState(false);
+  const [users, setUsers] = useState([]);
 
   // TODO: Service Editing
   const [isForm, setIsForm] = useState(false);
@@ -36,6 +37,20 @@ const Services = (props) => {
     });
   };
 
+  useEffect(() => {
+    const getData = async () => {
+      await axiosPrivate.get("/admin/users").then((users) => {
+        let userArray = [];
+        for (const user of users.data.data) {
+          userArray.push(user.username);
+        }
+        setUsers(userArray);
+      });
+    };
+
+    getData();
+  }, [axiosPrivate]);
+
   const formConfig = {
     type: "small",
     submit: {
@@ -48,6 +63,7 @@ const Services = (props) => {
       { name: "monthly_price", type: "number", min: 0 },
       { name: "pay_day", type: "number", min: 1, max: 31 },
     ],
+    selections: [{ name: "paid_by", options: users }],
     submitName: id ? "EDIT" : "CREATE",
   };
 

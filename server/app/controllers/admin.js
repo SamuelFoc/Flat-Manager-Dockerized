@@ -239,6 +239,7 @@ exports.getAllUsers = (req, res) => {
 
 exports.updateUser = async (req, res) => {
   const { user, email, pwd, contact, age, work, isAdmin } = req.body;
+
   let count;
   sequelize
     .sync()
@@ -250,14 +251,14 @@ exports.updateUser = async (req, res) => {
         },
       });
     })
-    .then((_user) => {
-      _user.username = user ? input.user : _user.username;
-      _user.email = email ? input.email : _user.email;
-      _user.password = pwd ? input.password : _user.password;
-      _user.contact = contact ? input.contact : _user.contact;
-      _user.age = age ? input.age : _user.age;
-      _user.work = work ? input.work : _user.work;
-      _user.isAdmin = isAdmin ? input.isAdmin : _user.isAdmin;
+    .then(async (_user) => {
+      _user.username = user ? user : _user.username;
+      _user.email = email ? email : _user.email;
+      _user.password = pwd ? await bcrypt.hash(pwd, 10) : _user.password;
+      _user.contact = contact ? contact : _user.contact;
+      _user.age = age ? age : _user.age;
+      _user.work = work ? work : _user.work;
+      _user.isAdmin = isAdmin ? isAdmin : _user.isAdmin;
       _user.save();
       return _user;
     })
@@ -541,18 +542,22 @@ exports.getAllServices = (req, res) => {
 };
 
 exports.createService = (req, res) => {
-  const { name, monthly_price, pay_day } = req.body;
+  const { name, monthly_price, pay_day, paid_by } = req.body;
 
   const SERVICE_MODEL = {
     name: name ? name : new Error("Name is required!"),
     monthly_price: monthly_price ? monthly_price : 0,
     pay_day: pay_day ? pay_day : 15,
+    paid_by: paid_by ? paid_by : null,
   };
 
   sequelize
     .sync()
-    .then(() => {
-      return Service.create(SERVICE_MODEL);
+    .then(async () => {
+      const user = await User.findOne({ where: { username: paid_by } });
+      const service = await Service.create(SERVICE_MODEL);
+      await user.addService(service);
+      return service;
     })
     .then((service) => {
       return res.status(200).json({
@@ -584,8 +589,14 @@ exports.deleteService = (req, res) => {
     });
 };
 
-exports.updateService = (req, res) => {
-  const { name, monthly_price, pay_day } = req.body;
+exports.updateService = async (req, res) => {
+  const { name, monthly_price, pay_day, paid_by } = req.body;
+
+  if (paid_by) {
+    const user = await User.findOne({ where: { username: paid_by } });
+    const service = await Service.findOne({ where: { id: req.params.id } });
+    await user.addService(service);
+  }
 
   sequelize
     .sync()

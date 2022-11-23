@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/AdminServiceCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,11 +9,7 @@ const ServiceCard = (props) => {
     <div className="adminServiceCard medium-text m-1">
       <div className="row align-items-center text-center">
         <div className="phoneCardText col-12 col-md-3">
-          <span className="my-2">
-            <FontAwesomeIcon icon={faCalendarCheck} />
-            &emsp;
-            {new Date(props?.info?.createdAt).toLocaleDateString("en-GB")}
-          </span>
+          <span className="my-2">{props?.info?.userEmail}</span>
         </div>
         <div className="phoneCardText col-12 col-md-2">{props?.info?.name}</div>
         <div className="phoneCardText col-12 col-md-4">
